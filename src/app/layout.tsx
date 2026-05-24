@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     title: "SEO Pulse | Elite SEO Mastermind & Live Intelligence Feed",
     description: "Futuristic SEO community platform. Best technical answers rise to the top automatically through live engagement ranking.",
     type: "website",
+  },
+  verification: {
+    google: "YOUR_GOOGLE_VERIFICATION_CODE", // Replace this with the verification code from Google Search Console
   }
 };
 
