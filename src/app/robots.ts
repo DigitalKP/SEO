@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://seo-pulse.vercel.app/sitemap.xml',
+    sitemap: 'https://seo-intel-sable.vercel.app/sitemap.xml',
   }
 }
