@@ -29,6 +29,40 @@ export default function DiscussionFeed({
   // Error notifications for review state
   const [accessError, setAccessError] = useState<string | null>(null);
 
+  // Parse markdown links [Anchor Text](URL) into clickable links
+  const renderAnswerContent = (content: string) => {
+    const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+    const parts: (string | React.ReactNode)[] = [];
+    let lastIndex = 0;
+    let match;
+    
+    while ((match = linkRegex.exec(content)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(content.substring(lastIndex, match.index));
+      }
+      
+      parts.push(
+        <a 
+          key={match.index} 
+          href={match[2]} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-emerald-400 hover:text-emerald-300 underline font-semibold transition-colors"
+        >
+          {match[1]}
+        </a>
+      );
+      
+      lastIndex = linkRegex.lastIndex;
+    }
+    
+    if (lastIndex < content.length) {
+      parts.push(content.substring(lastIndex));
+    }
+    
+    return parts.length > 0 ? parts : content;
+  };
+
   useEffect(() => {
     // Initial fetch
     setPosts(db.getPosts(categoryFilter, activeWeek));
@@ -498,7 +532,7 @@ export default function DiscussionFeed({
 
                       {/* Content block */}
                       <pre className="mt-3 text-xs text-slate-300 font-sans whitespace-pre-wrap leading-relaxed select-text font-medium bg-slate-950/80 p-3.5 rounded-xl border border-slate-900 overflow-x-auto">
-                        {answer.content}
+                        {renderAnswerContent(answer.content)}
                       </pre>
 
                       {/* Vote & Reply stats bar */}
