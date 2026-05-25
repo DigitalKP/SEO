@@ -12,10 +12,12 @@ import confetti from 'canvas-confetti';
 
 export default function DiscussionFeed({ 
   categoryFilter = 'All',
-  onAskQuestionTrigger 
+  onAskQuestionTrigger,
+  onAuthTrigger
 }: { 
   categoryFilter: string;
   onAskQuestionTrigger: () => void;
+  onAuthTrigger: () => void;
 }) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
@@ -585,29 +587,51 @@ export default function DiscussionFeed({
                   ))}
                 </div>
 
-                {/* Submit New Answer Form */}
-                <form onSubmit={handleAddAnswerSubmit} className="pt-4 border-t border-slate-800/80">
-                  <label className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-2">
-                    POST AN INSIGHT OR STRATEGY
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Enter your ranking findings, indexing hacks, or code fixes..."
-                    value={newAnswerText}
-                    onChange={(e) => setNewAnswerText(e.target.value)}
-                    className="w-full p-3.5 bg-slate-950 border border-slate-900 rounded-xl text-xs text-slate-200 outline-none focus:border-emerald-500/30 resize-none font-sans"
-                  />
-                  <div className="flex justify-end mt-2">
-                    <button
-                      type="submit"
-                      className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold font-mono text-xs rounded-xl flex items-center gap-1.5 transition-all shadow-md"
-                    >
-                      Post Answer
-                      <Send className="h-3.5 w-3.5" />
-                    </button>
+                {/* Submit New Answer Form / Guest Reminder Callout */}
+                {currentUser ? (
+                  <form onSubmit={handleAddAnswerSubmit} className="pt-4 border-t border-slate-800/80">
+                    <label className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-2">
+                      POST AN INSIGHT OR STRATEGY
+                    </label>
+                    <textarea
+                      rows={4}
+                      required
+                      placeholder="Enter your ranking findings, indexing hacks, or code fixes..."
+                      value={newAnswerText}
+                      onChange={(e) => setNewAnswerText(e.target.value)}
+                      className="w-full p-3.5 bg-slate-950 border border-slate-900 rounded-xl text-xs text-slate-200 outline-none focus:border-emerald-500/30 resize-none font-sans"
+                    />
+                    <div className="flex justify-end mt-2">
+                      <button
+                        type="submit"
+                        className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold font-mono text-xs rounded-xl flex items-center gap-1.5 transition-all shadow-md"
+                      >
+                        Post Answer
+                        <Send className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  <div className="pt-6 border-t border-slate-900 text-center">
+                    <div className="glass-panel border-emerald-500/25 bg-emerald-950/5 p-5 rounded-2xl relative overflow-hidden">
+                      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+                      <Sparkles className="h-5 w-5 text-emerald-400 mx-auto mb-2" />
+                      <h4 className="text-xs font-bold text-slate-200 font-mono uppercase tracking-wider">Join SEO Pulse Mastermind</h4>
+                      <p className="text-[10px] text-slate-500 mt-2 max-w-sm mx-auto leading-relaxed">
+                        To add answers, cast votes, submit comments, and view expert schemas, you need a verified account. It takes 10 seconds.
+                      </p>
+                      <button
+                        onClick={() => {
+                          setSelectedPost(null);
+                          onAuthTrigger();
+                        }}
+                        className="mt-4 px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold font-mono text-xs rounded-lg hover:opacity-95 shadow-md shadow-emerald-500/10 cursor-pointer"
+                      >
+                        Create Account
+                      </button>
+                    </div>
                   </div>
-                </form>
+                )}
 
               </div>
             </motion.div>

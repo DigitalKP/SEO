@@ -189,6 +189,25 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Guest Welcome Banner */}
+      {!currentUser && (
+        <div className="relative w-full bg-gradient-to-r from-emerald-950/30 via-slate-950/80 to-cyan-950/30 border-b border-slate-900/60 py-2.5 px-6 text-center text-xs font-mono z-20 flex items-center justify-center gap-2 flex-wrap">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="text-slate-300">
+            <strong>GUEST NOTICE //</strong> To unlock complete expert replies, cast upvotes/ratings, and access the Technical SEO jobs marketplace, you must create a verified account.
+          </span>
+          <button 
+            onClick={handleJoinSEOCommunity}
+            className="px-3 py-1 bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-400 hover:to-emerald-300 text-slate-950 font-bold rounded-lg transition-all shadow-[0_0_15px_rgba(16,185,129,0.15)] hover:scale-102 cursor-pointer"
+          >
+            Create Account
+          </button>
+        </div>
+      )}
+
       {/* Hero Section */}
       <Hero 
         onExplore={handleScrollToFeed}
@@ -241,6 +260,7 @@ export default function Home() {
                 <DiscussionFeed 
                   categoryFilter={categoryFilter}
                   onAskQuestionTrigger={() => setIsAskOpen(true)}
+                  onAuthTrigger={() => setIsAuthOpen(true)}
                 />
               </motion.div>
             )}
