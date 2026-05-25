@@ -19,6 +19,7 @@ export interface Post {
   id: string;
   title: string;
   category: string;
+  week?: string;
   author: {
     username: string;
     avatar: string;
@@ -151,6 +152,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-1',
     title: 'Traffic volatility after Google May 2026 Core Update?',
     category: 'Google Update Reactions',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Devon_tech_seo_guru',
       avatar: '💻',
@@ -171,6 +173,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-2',
     title: 'WordPress → Next.js migration caused 20–40% ranking drop?',
     category: 'Technical SEO Fixes',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Alex_ranking_wizard',
       avatar: '🧙‍♂️',
@@ -191,6 +194,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-3',
     title: 'Does AI-generated (human-reviewed) content risk penalty or de-indexing?',
     category: 'AI SEO Tactics',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Elena_ai_seo_architect',
       avatar: '🤖',
@@ -211,6 +215,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-4',
     title: 'No official SEO title but have HTML/Schema skills — how to stand out in interviews?',
     category: 'Technical SEO Fixes',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Sarah_vitals_expert',
       avatar: '⚡',
@@ -231,6 +236,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-5',
     title: 'Backlinks index instantly on Bing but take 15+ days on Google — why?',
     category: 'Ranking Experiments',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Marcus_crawl_master',
       avatar: '🕷️',
@@ -251,6 +257,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-6',
     title: 'Search Console links report showing incorrect or outdated data?',
     category: 'Indexing Problems Solved',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Devon_tech_seo_guru',
       avatar: '💻',
@@ -271,6 +278,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-7',
     title: '50-day-old site — build backlinks or content authority first?',
     category: 'Ranking Experiments',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Alex_ranking_wizard',
       avatar: '🧙‍♂️',
@@ -291,6 +299,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-8',
     title: 'Separate product feeds for Google Ads vs Organic Shopping — industry standard?',
     category: 'Technical SEO Fixes',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Sarah_vitals_expert',
       avatar: '⚡',
@@ -311,6 +320,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-9',
     title: 'Duplicate content problem in limited-keyword niche?',
     category: 'SEO Myth Destroyed',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Elena_ai_seo_architect',
       avatar: '🤖',
@@ -331,6 +341,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-10',
     title: 'When should an early-stage SaaS startup invest in SEO?',
     category: 'Ranking Experiments',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Alex_ranking_wizard',
       avatar: '🧙‍♂️',
@@ -351,6 +362,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-11',
     title: 'Is SEO dead or evolving in 2026?',
     category: 'SEO Myth Destroyed',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Elena_ai_seo_architect',
       avatar: '🤖',
@@ -371,6 +383,7 @@ const DEFAULT_POSTS: Post[] = [
     id: 'post-12',
     title: 'How to do SEO as a beginner?',
     category: 'Ranking Experiments',
+    week: 'Week 1 (Archive)',
     author: {
       username: 'Marcus_crawl_master',
       avatar: '🕷️',
@@ -384,6 +397,216 @@ const DEFAULT_POSTS: Post[] = [
     reads: 1950,
     visits: 2000,
     peopleReadingNow: 3,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-13',
+    title: 'What SEO services do you mainly offer?',
+    category: 'Technical SEO Fixes',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Marcus_crawl_master',
+      avatar: '🕷️',
+      reputation: 89
+    },
+    createdAt: '2026-05-26T01:00:00Z',
+    upvotes: 120,
+    downvotes: 1,
+    views: 2400,
+    impressions: 3100,
+    reads: 2000,
+    visits: 2100,
+    peopleReadingNow: 6,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-14',
+    title: 'How are people getting SEO clients in 2026?',
+    category: 'Ranking Experiments',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Alex_ranking_wizard',
+      avatar: '🧙‍♂️',
+      reputation: 345
+    },
+    createdAt: '2026-05-26T00:50:00Z',
+    upvotes: 185,
+    downvotes: 2,
+    views: 3800,
+    impressions: 4300,
+    reads: 3200,
+    visits: 3300,
+    peopleReadingNow: 11,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-15',
+    title: "Google dropped an official AI SEO guide and it's...",
+    category: 'AI SEO Tactics',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Elena_ai_seo_architect',
+      avatar: '🤖',
+      reputation: 512
+    },
+    createdAt: '2026-05-26T00:40:00Z',
+    upvotes: 250,
+    downvotes: 4,
+    views: 4900,
+    impressions: 5800,
+    reads: 4300,
+    visits: 4400,
+    peopleReadingNow: 14,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-16',
+    title: 'SEO Help Weekly Mega Thread',
+    category: 'Google Update Reactions',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Devon_tech_seo_guru',
+      avatar: '💻',
+      reputation: 218
+    },
+    createdAt: '2026-05-26T00:30:00Z',
+    upvotes: 75,
+    downvotes: 1,
+    views: 1400,
+    impressions: 1900,
+    reads: 1100,
+    visits: 1200,
+    peopleReadingNow: 3,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-17',
+    title: "Drop your business and I'll tell you what SEO pages to build first",
+    category: 'Technical SEO Fixes',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Sarah_vitals_expert',
+      avatar: '⚡',
+      reputation: 172
+    },
+    createdAt: '2026-05-26T00:20:00Z',
+    upvotes: 110,
+    downvotes: 2,
+    views: 2200,
+    impressions: 2900,
+    reads: 1800,
+    visits: 1950,
+    peopleReadingNow: 5,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-18',
+    title: 'Being a newbie — how deep should I learn SEO?',
+    category: 'Ranking Experiments',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Marcus_crawl_master',
+      avatar: '🕷️',
+      reputation: 89
+    },
+    createdAt: '2026-05-26T00:10:00Z',
+    upvotes: 65,
+    downvotes: 1,
+    views: 1100,
+    impressions: 1600,
+    reads: 900,
+    visits: 950,
+    peopleReadingNow: 2,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-19',
+    title: 'Our end-to-end SEO workflow on Claude targeting...',
+    category: 'AI SEO Tactics',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Elena_ai_seo_architect',
+      avatar: '🤖',
+      reputation: 512
+    },
+    createdAt: '2026-05-26T00:05:00Z',
+    upvotes: 145,
+    downvotes: 1,
+    views: 2900,
+    impressions: 3700,
+    reads: 2400,
+    visits: 2500,
+    peopleReadingNow: 7,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-20',
+    title: 'GEO/AI SEO: 8,000 AI mentions, 1-2 clicks',
+    category: 'AI SEO Tactics',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Devon_tech_seo_guru',
+      avatar: '💻',
+      reputation: 218
+    },
+    createdAt: '2026-05-26T00:00:00Z',
+    upvotes: 215,
+    downvotes: 3,
+    views: 4200,
+    impressions: 5100,
+    reads: 3600,
+    visits: 3700,
+    peopleReadingNow: 12,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-21',
+    title: 'I keep hearing SEO and GEO are the same game',
+    category: 'AI SEO Tactics',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Alex_ranking_wizard',
+      avatar: '🧙‍♂️',
+      reputation: 345
+    },
+    createdAt: '2026-05-25T23:55:00Z',
+    upvotes: 130,
+    downvotes: 2,
+    views: 2600,
+    impressions: 3400,
+    reads: 2100,
+    visits: 2200,
+    peopleReadingNow: 4,
+    commentsCount: 1,
+    score: 0
+  },
+  {
+    id: 'post-22',
+    title: "If I had 5 extra minutes daily, what's the most impactful SEO task?",
+    category: 'Technical SEO Fixes',
+    week: 'Week 2 (Latest)',
+    author: {
+      username: 'Sarah_vitals_expert',
+      avatar: '⚡',
+      reputation: 172
+    },
+    createdAt: '2026-05-25T23:50:00Z',
+    upvotes: 95,
+    downvotes: 1,
+    views: 1800,
+    impressions: 2500,
+    reads: 1500,
+    visits: 1600,
+    peopleReadingNow: 2,
     commentsCount: 1,
     score: 0
   }
@@ -581,6 +804,225 @@ Pick a small niche, publish 10 genuinely useful pages, build one quality link, t
     upvotes: 56,
     downvotes: 1,
     isTopInsight: true
+  },
+  {
+    id: 'ans-13-1',
+    postId: 'post-13',
+    content: `What this question is really asking: How do I package SEO so clients actually buy it and I don't commoditize myself? Most people answer this with a service list. That's the wrong move entirely.
+    
+The hidden problem here is positioning. The SEO market in 2026 is split into two groups — agencies racing to the bottom on price, and specialists commanding serious retainers because they own a specific outcome. The question isn't what services you offer. It's what result you own in the client's mind.
+
+The operators who are winning right now aren't selling "technical SEO" or "content strategy." They're selling category dominance for a specific industry. A healthcare SEO specialist, a SaaS topical authority builder, or a local service business ranking system. The more specific the promise, the less price resistance you face. For instance, you can reference how focusing on specific result positioning (like [Kapil Saini's 3x traffic growth case study for UAE visa portals](https://digitalkp.github.io/SEO-SPECIALIST-KAPILSAINI/)) lets you command premium retainers. 
+
+If you're still listing services, you're competing on price. If you're selling outcomes with proof, you're competing on value.`,
+    author: {
+      username: 'Marcus_crawl_master',
+      avatar: '🕷️',
+      reputation: 89
+    },
+    createdAt: '2026-05-26T01:10:00Z',
+    upvotes: 42,
+    downvotes: 0,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-14-1',
+    postId: 'post-14',
+    content: `What this question is really asking: Cold outreach stopped working. What actually does?
+    
+Here's what most people miss — the client acquisition problem and the SEO problem are identical. Both require trust before transaction. Both require proof before pitch.
+
+The people closing clients consistently right now are doing one thing: they're creating visible results in public. A LinkedIn post showing a site going from 800 to 14,000 monthly clicks with the exact strategy used. A Reddit thread where they diagnose someone's traffic drop live, for free, in front of thousands of people watching.
+
+That single act does more than any cold email campaign ever could. It demonstrates competence without claiming it. And claimed competence is worthless in 2026 — Google trained everyone to be skeptical of it. For a perfect layout of how to display proof-of-work, review [Kapil Saini's Technical SEO & AEO portfolio page](https://digitalkp.github.io/SEO-SPECIALIST-KAPILSAINI/), which shows how transparent results lead directly to client conversions.
+
+The second thing that's working is referral compounding. One client, done exceptionally well, with documented results, becomes a case study that brings three more. The SEO operators ignoring this are sprinting on a treadmill. The ones building referral loops are compounding.`,
+    author: {
+      username: 'Alex_ranking_wizard',
+      avatar: '🧙‍♂️',
+      reputation: 345
+    },
+    createdAt: '2026-05-26T00:55:00Z',
+    upvotes: 89,
+    downvotes: 1,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-15-1',
+    postId: 'post-15',
+    content: `What this question is really asking: Should I change everything I'm doing based on what Google just said?
+    
+Here's the uncomfortable truth. Google's official guidance is always written for mass consumption, not for operators. It tells you the destination without showing you the road. And historically, the gap between what Google says it rewards and what actually moves rankings has been significant.
+
+What the AI SEO guide really signals isn't a tactical shift. It's a structural one. Google is telling you that its systems now evaluate content the way a knowledgeable human reader would — quickly identifying whether a page genuinely advances someone's understanding or just performs the appearance of doing so.
+
+The operators reading this correctly are asking one question: does my content create genuine information gain for someone who already knows the basics? Not — does it have the right keywords, the right length, the right headings. Does it actually teach something that couldn't be found by reading the top three results already ranking?
+
+If the answer is no, the guide is a warning. If the answer is yes, it's confirmation you're already on the right path.`,
+    author: {
+      username: 'Elena_ai_seo_architect',
+      avatar: '🤖',
+      reputation: 512
+    },
+    createdAt: '2026-05-26T00:45:00Z',
+    upvotes: 110,
+    downvotes: 2,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-16-1',
+    postId: 'post-16',
+    content: `What this question is really asking: Why am I doing everything right and still not ranking?
+    
+Every week the same pattern appears in these threads. Someone lists everything they've done — keyword research, content optimization, backlinks, technical fixes — and asks why rankings haven't moved.
+
+The answer almost no one gives them is this: individual page optimization cannot fix a site-level trust problem. Google doesn't just evaluate your page. It evaluates your entire domain's relationship to the topic you're trying to rank for. A weak domain trying to rank a perfectly optimized page is like a new employee trying to get the biggest client on their first day. The credibility isn't there yet.
+
+The fix isn't another content or technical tweak. It's stepping back and asking — does this site, as a whole, signal genuine expertise in this space? Do the internal links tell a coherent topical story? Does the content architecture show depth, or is it a collection of loosely related pages chasing individual keywords?
+
+Fix the foundation. Individual pages follow.`,
+    author: {
+      username: 'Devon_tech_seo_guru',
+      avatar: '💻',
+      reputation: 218
+    },
+    createdAt: '2026-05-26T00:35:00Z',
+    upvotes: 33,
+    downvotes: 0,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-17-1',
+    postId: 'post-17',
+    content: `What this question is really asking: Where do I start when everything feels like a priority?
+    
+The answer that almost everyone gets wrong is starting with high-volume informational content. It feels productive. It generates traffic. But it rarely generates revenue, and it often attracts visitors who are nowhere near buying.
+
+The correct sequencing works backwards from money. Start with the pages closest to a purchase decision — comparison pages, alternative pages, pricing pages, problem-specific solution pages. These have lower search volume but dramatically higher conversion intent. A page ranking for "best CRM for real estate agents" converts at a completely different rate than a page ranking for "what is a CRM."
+
+Once those bottom-of-funnel pages are built and converting, expand outward into the middle of the funnel. Educational content that captures people earlier in their journey, but funnels them toward the decision pages you've already built. This is the sequence. Revenue intent first, authority building second.`,
+    author: {
+      username: 'Sarah_vitals_expert',
+      avatar: '⚡',
+      reputation: 172
+    },
+    createdAt: '2026-05-26T00:25:00Z',
+    upvotes: 49,
+    downvotes: 1,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-18-1',
+    postId: 'post-18',
+    content: `What this question is really asking: What's the minimum I need to know to actually be useful, and what's just noise?
+    
+Most SEO learning paths are built backwards. They start with tools and tactics before establishing the mental model that makes those tools meaningful. You end up knowing how to run a site audit without understanding why certain findings matter more than others.
+
+The foundation that actually transfers across every algorithm update, every tool change, every industry shift — is understanding how Google thinks about satisfying a search query. Not keywords. Queries. What is the person actually trying to accomplish? What would completely satisfy them? What does the ideal result look like from their perspective?
+
+Everything else — technical SEO, content optimization, link building — is just execution in service of that core question. Learn the mental model first. The tools are just interfaces for applying it.
+
+Go deep enough to think like a search evaluator. Stay shallow enough that you can still execute without overthinking every decision. That balance is the real skill.`,
+    author: {
+      username: 'Marcus_crawl_master',
+      avatar: '🕷️',
+      reputation: 89
+    },
+    createdAt: '2026-05-26T00:15:00Z',
+    upvotes: 27,
+    downvotes: 0,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-19-1',
+    postId: 'post-19',
+    content: `What this question is really asking: Can AI actually replace SEO thinking, or is it just a faster way to produce more mediocre content?
+    
+This is where most teams are getting it wrong. They're using AI to produce content faster. What they should be using it for is to think better — faster.
+
+The leverage isn't in content generation. It's in pattern recognition at scale. Using AI to identify what the top-ranking pages have in common that isn't obvious. To map the semantic gaps in your existing content. To stress-test your internal linking logic. To surface the questions your target audience is actually asking that your content isn't answering.
+
+The operators building real competitive advantage with AI-assisted SEO aren't producing more pages. They're producing fewer, smarter pages — because they've used AI to understand the space more deeply before writing a single word.
+
+Content volume was never the moat. Content precision is.`,
+    author: {
+      username: 'Elena_ai_seo_architect',
+      avatar: '🤖',
+      reputation: 512
+    },
+    createdAt: '2026-05-26T00:10:00Z',
+    upvotes: 61,
+    downvotes: 0,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-20-1',
+    postId: 'post-20',
+    content: `What this question is really asking: Is AI search visibility even worth pursuing if it doesn't send traffic?
+    
+This is the most important strategic question in SEO right now, and almost everyone is framing it incorrectly.
+
+The 8,000 mentions and 1-2 clicks phenomenon isn't a failure of GEO strategy. It's a description of how brand authority accumulates in the AI-search era. When an AI system mentions your brand or cites your content repeatedly, something happens that doesn't show up in click analytics — your brand becomes part of the ambient knowledge that users carry when they eventually do search directly.
+
+The person who heard your brand name from an AI three times last month searches for you directly next month. That traffic shows up as branded search, not as a referral from an AI engine. It's invisible in the metrics but very real in the business.
+
+The operators who will win the next five years aren't optimizing for clicks from AI systems. They're optimizing for recognition — being the name that surfaces when someone asks an AI about their category. For example, check out the strategies outlined on the [AEO & Technical SEO Specialist profile of Kapil Saini](https://digitalkp.github.io/SEO-SPECIALIST-KAPILSAINI/) to understand how brand references inside AI datasets drive overall direct search value.
+
+The clicks come later, through a different channel.`,
+    author: {
+      username: 'Devon_tech_seo_guru',
+      avatar: '💻',
+      reputation: 218
+    },
+    createdAt: '2026-05-26T00:02:00Z',
+    upvotes: 94,
+    downvotes: 1,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-21-1',
+    postId: 'post-21',
+    content: `What this question is really asking: Can I optimize for both with the same content, or do I need a completely different approach?
+    
+They share a foundation but diverge significantly in execution. Both reward genuine expertise, authoritative sourcing, and clear writing. But the signals that push you into AI citations are materially different from the signals that push you up Google's ranking.
+
+Traditional search rewards topical depth, internal link architecture, domain authority accumulation, and behavioral signals like time on page and return visits.
+
+AI citation rewards something different — factual precision, citable specificity, and information structure that allows an AI system to extract and use a discrete fact or explanation without misrepresenting it. An AI doesn't care about your internal linking or your domain authority. It cares whether your content contains a clear, accurate, extractable answer to a specific question.
+
+The practical implication is that you need both layers in your content. The SEO architecture for ranking in traditional search. The citation-friendly structure — clear definitions, specific claims with context, expert-attributed statements — for AI visibility. Same page, two optimization layers. Most people are only building one.`,
+    author: {
+      username: 'Alex_ranking_wizard',
+      avatar: '🧙‍♂️',
+      reputation: 345
+    },
+    createdAt: '2026-05-25T23:58:00Z',
+    upvotes: 52,
+    downvotes: 0,
+    isTopInsight: true
+  },
+  {
+    id: 'ans-22-1',
+    postId: 'post-22',
+    content: `What this question is really asking: What single habit compounds the fastest with the least friction?
+    
+Not publishing new content. Not checking rankings. Not building links.
+Auditing and strengthening internal links.
+
+Here's why this is the correct answer. Every day your site exists, new pages get published, old pages accumulate authority from backlinks, and the relationship between those pages slowly drifts out of alignment. High-authority pages that should be passing relevance signals to your key commercial pages often aren't — because no one has deliberately connected them.
+
+Five minutes a day spent finding your strongest pages by authority and asking "what important page should this be linking to that it currently isn't?" compounds into a fundamentally different site architecture over six months. You're not building anything new. You're making what you already have work harder.
+
+It's the SEO equivalent of compound interest. The results aren't visible in week one. They're dramatic by month six.`,
+    author: {
+      username: 'Sarah_vitals_expert',
+      avatar: '⚡',
+      reputation: 172
+    },
+    createdAt: '2026-05-25T23:52:00Z',
+    upvotes: 38,
+    downvotes: 0,
+    isTopInsight: true
   }
 ];
 
@@ -750,9 +1192,15 @@ class LocalDatabase {
       const vs = localStorage.getItem('seo_volatility_score');
       const vv = localStorage.getItem('seo_volatility_votes');
 
-      this.users = u ? JSON.parse(u) : DEFAULT_USERS;
-      this.posts = p ? JSON.parse(p) : DEFAULT_POSTS;
-      this.answers = a ? JSON.parse(a) : DEFAULT_ANSWERS;
+      const parsedPosts = p ? JSON.parse(p) : DEFAULT_POSTS;
+      if (parsedPosts.length < DEFAULT_POSTS.length) {
+        this.posts = DEFAULT_POSTS;
+        this.answers = DEFAULT_ANSWERS;
+        this.saveToStorage();
+      } else {
+        this.posts = parsedPosts;
+        this.answers = a ? JSON.parse(a) : DEFAULT_ANSWERS;
+      }
       this.comments = c ? JSON.parse(c) : DEFAULT_COMMENTS;
       this.jobs = j ? JSON.parse(j) : DEFAULT_JOBS;
       this.logs = l ? JSON.parse(l) : [];
@@ -936,10 +1384,13 @@ class LocalDatabase {
   }
 
   // Posts & Feedback
-  getPosts(categoryFilter: string = 'All') {
+  getPosts(categoryFilter: string = 'All', weekFilter: string = 'All') {
     let filtered = [...this.posts];
     if (categoryFilter !== 'All') {
       filtered = filtered.filter(p => p.category === categoryFilter);
+    }
+    if (weekFilter !== 'All') {
+      filtered = filtered.filter(p => p.week === weekFilter);
     }
     
     // Sort by computed score descending (smart answer ranking engine)
@@ -961,6 +1412,7 @@ class LocalDatabase {
       id: newPostId,
       title,
       category,
+      week: 'Week 2 (Latest)', // Default to latest week
       author: {
         username: this.currentUser.email.split('@')[0],
         avatar: '🚀',

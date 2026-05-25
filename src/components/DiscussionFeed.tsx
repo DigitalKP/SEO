@@ -24,18 +24,19 @@ export default function DiscussionFeed({
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [newAnswerText, setNewAnswerText] = useState('');
   const [commentInputs, setCommentInputs] = useState<Record<string, string>>({});
+  const [activeWeek, setActiveWeek] = useState<string>('Week 2 (Latest)');
 
   // Error notifications for review state
   const [accessError, setAccessError] = useState<string | null>(null);
 
   useEffect(() => {
     // Initial fetch
-    setPosts(db.getPosts(categoryFilter));
+    setPosts(db.getPosts(categoryFilter, activeWeek));
     setCurrentUser(db.getCurrentUser());
 
     // Subscribe to DB changes
     const unsubscribe = db.subscribe(() => {
-      setPosts(db.getPosts(categoryFilter));
+      setPosts(db.getPosts(categoryFilter, activeWeek));
       setCurrentUser(db.getCurrentUser());
       if (selectedPost) {
         const fresh = db.getPostById(selectedPost.id);
@@ -44,7 +45,7 @@ export default function DiscussionFeed({
     });
 
     return () => unsubscribe();
-  }, [categoryFilter, selectedPost]);
+  }, [categoryFilter, activeWeek, selectedPost]);
 
   // Load answers when a post is selected
   useEffect(() => {
@@ -163,7 +164,8 @@ export default function DiscussionFeed({
   const handleShare = (e: React.MouseEvent, post: Post) => {
     e.stopPropagation();
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(`http://localhost:3000/post/${post.id}`);
+      const shareUrl = `${window.location.origin}/post/${post.id}`;
+      navigator.clipboard.writeText(shareUrl);
       alert("Discussion link copied to clipboard!");
     }
   };
@@ -214,6 +216,40 @@ export default function DiscussionFeed({
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Week Switcher Tabs */}
+      <div className="flex gap-2 p-1.5 bg-slate-950/40 border border-slate-900 rounded-2xl w-fit">
+        <button
+          onClick={() => setActiveWeek('Week 2 (Latest)')}
+          className={`px-3 py-1.5 text-xs font-mono font-bold rounded-xl transition-all ${
+            activeWeek === 'Week 2 (Latest)'
+              ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shadow-[0_0_10px_rgba(16,185,129,0.05)]'
+              : 'text-slate-500 hover:text-slate-300 border border-transparent'
+          }`}
+        >
+          Week 2 (Latest)
+        </button>
+        <button
+          onClick={() => setActiveWeek('Week 1 (Archive)')}
+          className={`px-3 py-1.5 text-xs font-mono font-bold rounded-xl transition-all ${
+            activeWeek === 'Week 1 (Archive)'
+              ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shadow-[0_0_10px_rgba(16,185,129,0.05)]'
+              : 'text-slate-500 hover:text-slate-300 border border-transparent'
+          }`}
+        >
+          Week 1 (Archive)
+        </button>
+        <button
+          onClick={() => setActiveWeek('All')}
+          className={`px-3 py-1.5 text-xs font-mono font-bold rounded-xl transition-all ${
+            activeWeek === 'All'
+              ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shadow-[0_0_10px_rgba(16,185,129,0.05)]'
+              : 'text-slate-500 hover:text-slate-300 border border-transparent'
+          }`}
+        >
+          All Weeks
+        </button>
+      </div>
 
       {/* Live Feed List */}
       <div className="space-y-4">
